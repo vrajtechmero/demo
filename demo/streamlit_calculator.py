@@ -119,4 +119,4 @@ if st.button("Calculate", use_container_width=True):
         st.success(output)
         history.append(output)
     except Exception as e:
-        st.error(f"Error: {e}") 
+        st.error(f"Error: {e}")
