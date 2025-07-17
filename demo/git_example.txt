@@ -1,0 +1,27 @@
+# Example: Using git restore, git reset, git reset --hard, and git revert
+
+Suppose you have a file called example.py and you make some changes to it.
+
+## 1. Discard changes in the working directory
+# You edit example.py but want to throw away your changes:
+git restore example.py
+
+## 2. Unstage a file (keep changes in working directory)
+# You staged example.py with git add, but want to unstage it:
+git add example.py
+git reset example.py
+
+## 3. Discard all local changes (dangerous: resets everything to last commit)
+# You want to throw away ALL local changes in all files:
+git reset --hard
+
+## 4. Revert a commit (creates a new commit that undoes a previous one)
+# You want to undo a specific commit (find the commit hash with git log):
+git log  # Find the commit hash, e.g., abc1234
+git revert abc1234
+
+# Notes:
+# - git restore <file>: Only affects the working directory (not staged changes).
+# - git reset <file>: Only unstages the file (keeps your changes in the working directory).
+# - git reset --hard: DANGEROUS! Discards all local changes and resets to last commit.
+# - git revert <commit>: Safely undoes a commit by creating a new commit that reverses it. 
